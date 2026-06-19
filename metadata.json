@@ -1,0 +1,8 @@
+{
+  "name": "MerchantAI Customer Support & Listing Assistant",
+  "description": "An AdSense-ready, AI-powered e-commerce companion for automated customer replies, listing optimization, and competitor analysis on Amazon, eBay, and direct websites.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}
