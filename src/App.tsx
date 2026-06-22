@@ -3450,7 +3450,7 @@ export default function App() {
                       <Bot size={20} />
                     </div>
                     <div>
-                      <h3 className="font-serif text-lg text-[#5A5A40]">VHL Assistant</h3>
+                      <h3 className="font-serif text-lg text-[#5A5A40]">MerchantAI Assistant</h3>
                       <p className="text-[10px] uppercase tracking-widest text-[#8E9299] font-bold">Always here to help</p>
                     </div>
                   </div>
