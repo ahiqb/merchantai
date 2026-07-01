@@ -420,6 +420,12 @@ export default function App() {
   const [showTerms, setShowTerms] = useState<boolean>(false);
   const [embeddedToolTab, setEmbeddedToolTab] = useState<'reply' | 'listing' | 'chat'>('reply');
   
+  // Email Signup State
+  const [emailInput, setEmailInput] = useState('');
+  const [marketplaceInput, setMarketplaceInput] = useState('Amazon');
+  const [emailSubmitted, setEmailSubmitted] = useState(false);
+  const [expandedFAQ, setExpandedFAQ] = useState<string | null>(null);
+  
   // Chat State
   const [chatMessages, setChatMessages] = useState<ChatMessage[]>(() => {
     const saved = localStorage.getItem('vhl_chat_history');
@@ -1876,7 +1882,118 @@ export default function App() {
                 </div>
               </div>
 
-              {/* 8. MARKETPLACE COVERAGE */}
+              {/* 8. EMAIL SIGNUP & COMMUNITY */}
+              <div className="bg-gradient-to-r from-[#5A5A40] to-[#6B6B50] rounded-3xl p-12 text-center space-y-6">
+                <div className="space-y-3">
+                  <h2 className="font-serif text-3xl md:text-4xl text-white font-bold">Join 500+ Sellers Scaling Smarter</h2>
+                  <p className="text-white/80 text-sm">Get weekly seller tips, free templates, and early access to new features.</p>
+                </div>
+                <div className="flex flex-col md:flex-row gap-3 max-w-lg mx-auto">
+                  <input
+                    type="email"
+                    placeholder="your@email.com"
+                    value={emailInput}
+                    onChange={(e) => setEmailInput(e.target.value)}
+                    className="flex-1 px-4 py-3 rounded-xl text-sm text-[#5A5A40] placeholder-[#8E9299] focus:outline-none focus:ring-2 focus:ring-white/30"
+                  />
+                  <select
+                    value={marketplaceInput}
+                    onChange={(e) => setMarketplaceInput(e.target.value)}
+                    className="px-4 py-3 rounded-xl text-sm text-[#5A5A40] focus:outline-none focus:ring-2 focus:ring-white/30 bg-white"
+                  >
+                    <option>Amazon</option>
+                    <option>eBay</option>
+                    <option>Shopify</option>
+                    <option>Etsy</option>
+                    <option>Walmart</option>
+                    <option>Other</option>
+                  </select>
+                  <button
+                    onClick={() => {
+                      if (emailInput && /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(emailInput)) {
+                        setEmailSubmitted(true);
+                        setEmailInput('');
+                        setTimeout(() => setEmailSubmitted(false), 4000);
+                      }
+                    }}
+                    className="px-8 py-3 bg-white text-[#5A5A40] font-bold rounded-xl text-sm hover:bg-[#FAF9F5] transition-all flex items-center justify-center gap-2 whitespace-nowrap"
+                  >
+                    {emailSubmitted ? <><Check size={16} /> Joined!</> : <><Mail size={16} /> Sign Up</> }
+                  </button>
+                </div>
+                <p className="text-white/60 text-xs">✓ No spam • ✓ Unsubscribe anytime • ✓ Updates only</p>
+              </div>
+
+              {/* 9. FAQ SECTION */}
+              <div className="space-y-8">
+                <div className="text-center max-w-2xl mx-auto space-y-2">
+                  <span className="text-[10px] font-mono text-[#8E9299] uppercase tracking-widest font-extrabold">Common Questions</span>
+                  <h2 className="font-serif text-3xl md:text-4xl text-[#5A5A40] font-bold">Everything You Need to Know</h2>
+                  <p className="text-sm text-[#8E9299]">Quick answers to help you get started with MerchantAI.</p>
+                </div>
+
+                <div className="space-y-3 max-w-3xl mx-auto">
+                  {[
+                    {
+                      id: 'faq-1',
+                      q: 'Can I really use this for free?',
+                      a: 'Yes! MerchantAI includes a generous free tier with 5 daily AI responses, 2 listing optimizations, and full access to our support templates. Premium plans ($9-29/month) unlock unlimited generation, advanced analytics, and API access.'
+                    },
+                    {
+                      id: 'faq-2',
+                      q: 'Is my data secure and private?',
+                      a: 'Absolutely. We encrypt all data in transit and at rest. Your customer information, product details, and conversations never leave our secure servers and are never sold to third parties. We comply with GDPR, CCPA, and marketplace data policies.'
+                    },
+                    {
+                      id: 'faq-3',
+                      q: 'Will responses match Amazon/eBay policy?',
+                      a: 'Yes. MerchantAI is built with real marketplace guidelines. All responses are structured to comply with Amazon A10 algorithm requirements, eBay seller standards, Shopify brand voice, and Etsy community guidelines. We even track policy updates automatically.'
+                    },
+                    {
+                      id: 'faq-4',
+                      q: 'How many responses can I generate daily?',
+                      a: 'Free tier: 5 support replies per day. Starter ($9/mo): 50 daily. Pro ($19/mo): 200 daily. Enterprise: Unlimited. All plans include listing optimization, competitor insights, and strategy advisor access.'
+                    },
+                    {
+                      id: 'faq-5',
+                      q: 'Do you support multiple sellers/teams?',
+                      a: 'Yes! Pro and Enterprise plans include team features. Add up to 10 team members, manage separate templates per seller account, and track who generated what responses. Role-based access controls coming in Q3 2026.'
+                    },
+                    {
+                      id: 'faq-6',
+                      q: 'What if I don\'t like a response?',
+                      a: 'No problem! All responses show generation confidence scores. You can regenerate, edit, save as templates, or provide feedback to train our model better over time. Most users refine only 10-15% of outputs.'
+                    }
+                  ].map((faq) => (
+                    <div
+                      key={faq.id}
+                      onClick={() => setExpandedFAQ(expandedFAQ === faq.id ? null : faq.id)}
+                      className="bg-white border border-[#5A5A40]/10 rounded-2xl p-6 hover:border-[#5A5A40]/30 transition-all cursor-pointer group"
+                    >
+                      <div className="flex items-start justify-between gap-4">
+                        <h4 className="font-serif text-base font-bold text-[#5A5A40] text-left">{faq.q}</h4>
+                        <div className="text-[#5A5A40] mt-1 flex-shrink-0 transition-transform group-hover:scale-110">
+                          {expandedFAQ === faq.id ? <span>−</span> : <span>+</span>}
+                        </div>
+                      </div>
+                      <AnimatePresence>
+                        {expandedFAQ === faq.id && (
+                          <motion.div
+                            initial={{ opacity: 0, height: 0 }}
+                            animate={{ opacity: 1, height: 'auto' }}
+                            exit={{ opacity: 0, height: 0 }}
+                            className="mt-4 pt-4 border-t border-[#5A5A40]/10"
+                          >
+                            <p className="text-sm text-[#8E9299] leading-relaxed">{faq.a}</p>
+                          </motion.div>
+                        )}
+                      </AnimatePresence>
+                    </div>
+                  ))}
+                </div>
+              </div>
+
+              {/* 10. MARKETPLACE COVERAGE */}
               <div className="space-y-8">
                 <div className="text-center max-w-2xl mx-auto space-y-2">
                   <span className="text-[10px] font-mono text-[#8E9299] uppercase tracking-widest font-extrabold">Built-In Algorithm Memory</span>
