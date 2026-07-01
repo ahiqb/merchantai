@@ -4,6 +4,8 @@ dist/
 coverage/
 .DS_Store
 *.log
+# Ignore all env files but keep the example
 .env*
 !.env.example
+# Ensure local env is ignored (do NOT commit secrets)
 .env.local

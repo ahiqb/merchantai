@@ -424,6 +424,8 @@ export default function App() {
   const [emailInput, setEmailInput] = useState('');
   const [marketplaceInput, setMarketplaceInput] = useState('Amazon');
   const [emailSubmitted, setEmailSubmitted] = useState(false);
+  const [emailError, setEmailError] = useState('');
+  const [isSubmittingEmail, setIsSubmittingEmail] = useState(false);
   const [expandedFAQ, setExpandedFAQ] = useState<string | null>(null);
   
   // Chat State
@@ -1909,20 +1911,42 @@ export default function App() {
                     <option>Other</option>
                   </select>
                   <button
-                    onClick={() => {
-                      if (emailInput && /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(emailInput)) {
-                        setEmailSubmitted(true);
-                        setEmailInput('');
-                        setTimeout(() => setEmailSubmitted(false), 4000);
-                      }
-                    }}
-                    className="px-8 py-3 bg-white text-[#5A5A40] font-bold rounded-xl text-sm hover:bg-[#FAF9F5] transition-all flex items-center justify-center gap-2 whitespace-nowrap"
-                  >
-                    {emailSubmitted ? <><Check size={16} /> Joined!</> : <><Mail size={16} /> Sign Up</> }
-                  </button>
-                </div>
-                <p className="text-white/60 text-xs">✓ No spam • ✓ Unsubscribe anytime • ✓ Updates only</p>
-              </div>
+                      onClick={async () => {
+                        setEmailError('');
+                        if (!emailInput || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(emailInput)) {
+                          setEmailError('Please enter a valid email address.');
+                          return;
+                        }
+
+                        setIsSubmittingEmail(true);
+                        try {
+                          const response = await fetch('/api/subscribe', {
+                            method: 'POST',
+                            headers: { 'Content-Type': 'application/json' },
+                            body: JSON.stringify({ email: emailInput.trim(), marketplace: marketplaceInput })
+                          });
+                          const result = await response.json();
+                          if (!response.ok) {
+                            setEmailError(result.error || 'Unable to subscribe right now. Please try again later.');
+                          } else {
+                            setEmailSubmitted(true);
+                            setEmailInput('');
+                            setTimeout(() => setEmailSubmitted(false), 4000);
+                          }
+                        } catch (err) {
+                          setEmailError('Unable to connect to the subscription service.');
+                        } finally {
+                          setIsSubmittingEmail(false);
+                        }
+                      }}
+                      className="px-8 py-3 bg-white text-[#5A5A40] font-bold rounded-xl text-sm hover:bg-[#FAF9F5] transition-all flex items-center justify-center gap-2 whitespace-nowrap"
+                      disabled={isSubmittingEmail}
+                    >
+                      {isSubmittingEmail ? <Loader2 size={16} className="animate-spin" /> : (emailSubmitted ? <><Check size={16} /> Joined!</> : <><Mail size={16} /> Sign Up</>) }
+                    </button>
+                  </div>
+                  <p className="text-white/60 text-xs">✓ No spam • ✓ Unsubscribe anytime • ✓ Updates only</p>
+                  {emailError && <p className="text-sm text-[#FFDE59]">{emailError}</p>}
 
               {/* 9. FAQ SECTION */}
               <div className="space-y-8">
