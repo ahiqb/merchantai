@@ -1429,7 +1429,7 @@ export default function App() {
                   <span className="font-serif text-2xl font-bold tracking-tight text-[#5A5A40]">MerchantAI</span>
                   <span className="text-[9px] bg-[#5A5A40]/10 text-[#5A5A40] px-1.5 py-0.5 rounded-full font-mono font-bold tracking-wide">v1.4</span>
                 </div>
-                <span className="text-[9px] uppercase tracking-[0.22em] block font-mono text-[#8E9299] font-bold -mt-0.5">Customer Support & Seller Hub</span>
+                <span className="text-[9px] uppercase tracking-[0.22em] block font-mono text-[#8E9299] font-bold -mt-0.5">AI-Powered Seller Growth Platform</span>
               </div>
             </div>
 
@@ -1516,7 +1516,7 @@ export default function App() {
                 className="hidden sm:flex items-center gap-2 text-xs font-extrabold uppercase tracking-widest px-5 py-3 rounded-xl border-2 border-[#5A5A40]/25 text-[#5A5A40] hover:bg-[#5A5A40]/5 transition-all cursor-pointer"
               >
                 <ShoppingBag size={13} />
-                <span>Optimize Free</span>
+                <span>Start Free</span>
               </button>
 
               {/* Mobile responsive toggle shortcut */}
