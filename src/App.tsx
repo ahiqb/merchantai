@@ -1605,18 +1605,17 @@ export default function App() {
                   {/* Visual Category tag */}
                   <div className="inline-flex items-center gap-2 bg-[#5A5A40]/15 text-[#5A5A40] px-3.5 py-1.5 rounded-full text-[10px] uppercase tracking-widest font-extrabold mb-6 border border-[#5A5A40]/10">
                     <Award size={12} />
-                    <span>Free Merchant AI Portal & Copy Suite</span>
+                    <span>Premium Merchant AI Platform</span>
                   </div>
                   
                   <h1 className="font-serif text-4xl md:text-6xl font-bold text-[#5A5A40] leading-[1.08] tracking-tight mb-6">
-                    Assess. Optimize. Scale. <br />
-                    Complete E-Commerce Copy Engine
+                    Elevate Your Business with <br />
+                    Intelligent AI
                   </h1>
                   
                   <p className="text-[#5A5A40]/90 text-sm md:text-base leading-relaxed mb-8 max-w-2xl font-normal">
-                    MerchantAI is a full-scale AI companion optimized to handle the heavy lifting for modern e-commerce stores. 
-                    From drafting ultra-empathetic, localized customer dispute replies across 15 countries to generating character-synchronized search listings 
-                    for Amazon FBA and eBay, our portal provides direct, ready-to-publish outputs that secure buy-box placements and preserve top customer rating benchmarks.
+                    Transform everyday operations with AI-driven automation, smarter insights, and seamless customer experiences designed for growth. 
+                    MerchantAI helps modern teams move faster, protect brand quality, and scale with confidence across every channel.
                   </p>
 
                   {/* Immediate App CTAs */}
@@ -1626,42 +1625,44 @@ export default function App() {
                       className="flex items-center justify-center gap-2 px-7 py-4 bg-[#5A5A40] hover:bg-[#4E4E37] text-white text-xs font-extrabold uppercase tracking-widest rounded-xl transition-all shadow-md hover:shadow-lg cursor-pointer"
                     >
                       <MessageSquare size={16} />
-                      <span>Open Reply Wizard</span>
+                      <span>Book a Demo</span>
                     </button>
                     <button
                       onClick={() => setMode('listing')}
                       className="flex items-center justify-center gap-2 px-7 py-4 bg-white hover:bg-[#FAF9F5] text-[#5A5A40] border-2 border-[#5A5A40]/20 text-xs font-extrabold uppercase tracking-widest rounded-xl transition-all cursor-pointer"
                     >
                       <ShoppingBag size={16} />
-                      <span>Generate SEO Listing</span>
+                      <span>Explore Platform</span>
                     </button>
                     <button
                       onClick={() => setMode('chat')}
                       className="flex items-center justify-center gap-2 px-7 py-4 bg-[#5A5A40]/5 hover:bg-[#5A5A40]/10 text-[#5A5A40] text-xs font-bold uppercase tracking-widest rounded-xl transition-all cursor-pointer"
                     >
                       <Bot size={16} />
-                      <span>Co-Pilot Chat</span>
+                      <span>Try AI Chat</span>
                     </button>
                   </div>
                 </div>
 
                 {/* Sub-features grid overlay */}
-                <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mt-12 pt-8 border-t border-[#5A5A40]/10 text-center md:text-left">
-                  <div>
-                    <span className="text-xl md:text-2xl font-serif text-[#5A5A40] font-bold">15+</span>
-                    <p className="text-[10px] uppercase tracking-wider text-[#8E9299] font-bold mt-0.5">Regions & Currencies</p>
-                  </div>
-                  <div>
-                    <span className="text-xl md:text-2xl font-serif text-[#5A5A40] font-bold">100%</span>
-                    <p className="text-[10px] uppercase tracking-wider text-[#8E9299] font-bold mt-0.5">Characters Compliant</p>
-                  </div>
-                  <div>
-                    <span className="text-xl md:text-2xl font-serif text-[#5A5A40] font-bold">Instant</span>
-                    <p className="text-[10px] uppercase tracking-wider text-[#8E9299] font-bold mt-0.5">Competitor Overlap Maps</p>
-                  </div>
-                  <div>
-                    <span className="text-xl md:text-2xl font-serif text-[#5A5A40] font-bold">No-Cost</span>
-                    <p className="text-[10px] uppercase tracking-wider text-[#8E9299] font-bold mt-0.5">Free Ad-Supported Access</p>
+                <div className="mt-12 pt-8 border-t border-[#5A5A40]/10">
+                  <div className="grid grid-cols-2 md:grid-cols-4 gap-4 text-center md:text-left">
+                    <div className="rounded-2xl bg-white/70 border border-[#5A5A40]/10 p-4">
+                      <span className="text-xl md:text-2xl font-serif text-[#5A5A40] font-bold">15+</span>
+                      <p className="text-[10px] uppercase tracking-wider text-[#8E9299] font-bold mt-0.5">Regions & Currencies</p>
+                    </div>
+                    <div className="rounded-2xl bg-white/70 border border-[#5A5A40]/10 p-4">
+                      <span className="text-xl md:text-2xl font-serif text-[#5A5A40] font-bold">100%</span>
+                      <p className="text-[10px] uppercase tracking-wider text-[#8E9299] font-bold mt-0.5">Characters Compliant</p>
+                    </div>
+                    <div className="rounded-2xl bg-white/70 border border-[#5A5A40]/10 p-4">
+                      <span className="text-xl md:text-2xl font-serif text-[#5A5A40] font-bold">Instant</span>
+                      <p className="text-[10px] uppercase tracking-wider text-[#8E9299] font-bold mt-0.5">Competitor Insight</p>
+                    </div>
+                    <div className="rounded-2xl bg-white/70 border border-[#5A5A40]/10 p-4">
+                      <span className="text-xl md:text-2xl font-serif text-[#5A5A40] font-bold">No-Cost</span>
+                      <p className="text-[10px] uppercase tracking-wider text-[#8E9299] font-bold mt-0.5">Free Access</p>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -1695,10 +1696,10 @@ export default function App() {
               {/* 3. WHAT THE TOOL DOES */}
               <div className="space-y-8 pt-4">
                 <div className="text-center max-w-2xl mx-auto space-y-2">
-                  <span className="text-[10px] font-mono text-[#8E9299] uppercase tracking-widest font-extrabold">Advanced Copy Systems</span>
-                  <h2 className="font-serif text-3xl md:text-4xl text-[#5A5A40] font-bold">Uncompromising E-Commerce Superpowers</h2>
+                  <span className="text-[10px] font-mono text-[#8E9299] uppercase tracking-widest font-extrabold">Premium Merchant Growth Tools</span>
+                  <h2 className="font-serif text-3xl md:text-4xl text-[#5A5A40] font-bold">Built for Smarter, Faster Growth</h2>
                   <p className="text-sm text-[#8E9299]">
-                    MerchantAI coordinates complex regulatory, algorithmic, and support rules to deliver high-converting copy in seconds.
+                    MerchantAI combines intelligent automation, customer experience design, and SEO precision to help modern businesses compete with clarity and speed.
                   </p>
                 </div>
 
@@ -1707,9 +1708,9 @@ export default function App() {
                     <div className="w-12 h-12 bg-[#5A5A40]/10 rounded-2xl flex items-center justify-center text-[#5A5A40] mb-6">
                       <MessageSquare size={24} />
                     </div>
-                    <h3 className="font-serif text-xl font-bold text-[#5A5A40] mb-3">Reply Wizard & Dispute Resolver</h3>
+                    <h3 className="font-serif text-xl font-bold text-[#5A5A40] mb-3">Intelligent Support Automation</h3>
                     <p className="text-xs text-[#8E9299] leading-relaxed">
-                      Automatically generates empathetic, firm, and fully protective resolution formulas for item transit losses, damage disputes, or custom returns. Protects seller metrics across 15 regions.
+                      Generate polished, empathetic, brand-safe support responses for returns, delays, and disputes in seconds while protecting customer trust and seller performance.
                     </p>
                   </div>
 
@@ -1717,9 +1718,9 @@ export default function App() {
                     <div className="w-12 h-12 bg-[#5A5A40]/10 rounded-2xl flex items-center justify-center text-[#5A5A40] mb-6">
                       <ShoppingBag size={24} />
                     </div>
-                    <h3 className="font-serif text-xl font-bold text-[#5A5A40] mb-3">SEO Hub & Listing Optimizer</h3>
+                    <h3 className="font-serif text-xl font-bold text-[#5A5A40] mb-3">SEO & Listing Intelligence</h3>
                     <p className="text-xs text-[#8E9299] leading-relaxed">
-                      Structures search headlines, bullet arguments, and back-end keywords strictly matching Amazon's A10 or eBay's Cassini filters. Prevents keyword stuffing penalties while securing search real estate.
+                      Create marketplace-ready titles, bullets, and keywords tailored to Amazon, eBay, Shopify, and beyond with conversion-focused structure and compliance in mind.
                     </p>
                   </div>
 
@@ -1727,21 +1728,59 @@ export default function App() {
                     <div className="w-12 h-12 bg-[#5A5A40]/10 rounded-2xl flex items-center justify-center text-[#5A5A40] mb-6">
                       <Bot size={24} />
                     </div>
-                    <h3 className="font-serif text-xl font-bold text-[#5A5A40] mb-3">Co-Pilot & Strategy Chat</h3>
+                    <h3 className="font-serif text-xl font-bold text-[#5A5A40] mb-3">Strategic AI Co-Pilot</h3>
                     <p className="text-xs text-[#8E9299] leading-relaxed">
-                      A real-time, context-grounded specialist configured with deep retail memory. Query pricing strategies, customer policy drafts, or FBA freight protocols instantly.
+                      Work with a context-aware specialist for pricing insight, marketplace strategy, policy drafting, and fast decision-making without the overhead of a full agency.
                     </p>
                   </div>
                 </div>
               </div>
 
-              {/* 4. HOW IT WORKS */}
+              {/* 4. TRUST / PREMIUM SECTION */}
+              <div className="bg-white rounded-[32px] p-8 md:p-12 border border-[#5A5A40]/10 shadow-sm">
+                <div className="grid grid-cols-1 lg:grid-cols-[1.1fr_0.9fr] gap-8 items-start">
+                  <div className="space-y-4">
+                    <span className="text-[10px] font-mono text-[#8E9299] uppercase tracking-widest font-extrabold">Trusted by Growth-Minded Merchants</span>
+                    <h2 className="font-serif text-3xl md:text-4xl text-[#5A5A40] font-bold">A polished operations layer for modern commerce</h2>
+                    <p className="text-sm text-[#8E9299] leading-relaxed">
+                      From everyday support replies to marketplace-ready listings, MerchantAI gives teams a calm, premium workflow that helps them move faster, protect their brand, and scale with confidence.
+                    </p>
+                    <div className="flex flex-wrap gap-3 pt-2">
+                      <span className="px-3 py-1.5 rounded-full bg-[#5A5A40]/10 text-[#5A5A40] text-[10px] uppercase tracking-widest font-extrabold">Brand-safe content</span>
+                      <span className="px-3 py-1.5 rounded-full bg-[#5A5A40]/10 text-[#5A5A40] text-[10px] uppercase tracking-widest font-extrabold">SEO precision</span>
+                      <span className="px-3 py-1.5 rounded-full bg-[#5A5A40]/10 text-[#5A5A40] text-[10px] uppercase tracking-widest font-extrabold">Fast execution</span>
+                    </div>
+                  </div>
+
+                  <div className="space-y-4">
+                    <div className="rounded-3xl border border-[#5A5A40]/10 bg-[#FAF9F5] p-6 shadow-sm">
+                      <p className="font-serif text-xl text-[#5A5A40] leading-relaxed">
+                        “It feels like a premium operations layer for our store—fast, polished, and incredibly useful.”
+                      </p>
+                      <p className="mt-3 text-xs uppercase tracking-wider text-[#8E9299] font-extrabold">— Early merchant partner</p>
+                    </div>
+
+                    <div className="grid grid-cols-2 gap-3">
+                      <div className="rounded-2xl bg-[#5A5A40]/5 p-4 text-center">
+                        <div className="font-serif text-2xl font-bold text-[#5A5A40]">15+</div>
+                        <p className="text-[10px] uppercase tracking-wider text-[#8E9299] font-extrabold mt-1">Regions</p>
+                      </div>
+                      <div className="rounded-2xl bg-[#5A5A40]/5 p-4 text-center">
+                        <div className="font-serif text-2xl font-bold text-[#5A5A40]">24/7</div>
+                        <p className="text-[10px] uppercase tracking-wider text-[#8E9299] font-extrabold mt-1">Support flow</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              {/* 5. HOW IT WORKS */}
               <div className="bg-[#FAF9F5] rounded-[32px] p-8 md:p-12 border border-black/5 space-y-8">
                 <div className="text-center max-w-2xl mx-auto space-y-2">
                   <span className="text-[10px] font-mono text-[#8E9299] uppercase tracking-widest font-extrabold">Seamless Execution Pipeline</span>
-                  <h2 className="font-serif text-3xl text-[#5A5A40] font-bold">How the Optimization Engine Works</h2>
+                  <h2 className="font-serif text-3xl text-[#5A5A40] font-bold">How Premium Merchant Workflows Come Together</h2>
                   <p className="text-xs text-[#8E9299]">
-                    Skip hours of manual copy drafts. Follow our integrated four-step pipeline to export ready-to-publish material.
+                    Move from raw input to polished, publish-ready content in a few guided steps designed for speed and confidence.
                   </p>
                 </div>
 
@@ -1788,7 +1827,27 @@ export default function App() {
                 </div>
               </div>
 
-              {/* 5. MARKETPLACE COVERAGE */}
+              {/* 6. FINAL CTA BAND */}
+              <div className="bg-gradient-to-r from-[#5A5A40] via-[#5A5A40]/90 to-[#4E4E37] rounded-[32px] p-8 md:p-10 text-white shadow-sm">
+                <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-6">
+                  <div className="max-w-2xl">
+                    <span className="text-[10px] font-mono uppercase tracking-widest font-extrabold text-white/70">Ready to upgrade your workflow?</span>
+                    <h2 className="font-serif text-3xl md:text-4xl font-bold mt-2">Bring premium AI support and listing intelligence to your business.</h2>
+                    <p className="text-sm text-white/80 mt-3 leading-relaxed">
+                      Launch faster, communicate more clearly, and connect every product experience with one intelligent platform.
+                    </p>
+                  </div>
+                  <button
+                    onClick={() => setMode('reply')}
+                    className="flex items-center justify-center gap-2 px-7 py-4 bg-white text-[#5A5A40] text-xs font-extrabold uppercase tracking-widest rounded-xl transition-all hover:bg-[#FAF9F5] cursor-pointer"
+                  >
+                    <MessageSquare size={16} />
+                    <span>Get Started</span>
+                  </button>
+                </div>
+              </div>
+
+              {/* 7. MARKETPLACE COVERAGE */}
               <div className="space-y-8">
                 <div className="text-center max-w-2xl mx-auto space-y-2">
                   <span className="text-[10px] font-mono text-[#8E9299] uppercase tracking-widest font-extrabold">Built-In Algorithm Memory</span>
