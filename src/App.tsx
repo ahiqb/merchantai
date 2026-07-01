@@ -1622,17 +1622,17 @@ export default function App() {
                   <div className="flex flex-col sm:flex-row gap-4">
                     <button
                       onClick={() => setMode('reply')}
-                      className="flex items-center justify-center gap-2 px-7 py-4 bg-[#5A5A40] hover:bg-[#4E4E37] text-white text-xs font-extrabold uppercase tracking-widest rounded-xl transition-all shadow-md hover:shadow-lg cursor-pointer"
+                      className="flex items-center justify-center gap-2 px-8 py-4 bg-[#5A5A40] hover:bg-[#4E4E37] text-white text-xs font-extrabold uppercase tracking-widest rounded-xl transition-all shadow-lg hover:shadow-xl cursor-pointer ring-2 ring-[#5A5A40]/20"
                     >
-                      <MessageSquare size={16} />
-                      <span>Book a Demo</span>
+                      <Sparkles size={16} />
+                      <span>Try Free Now</span>
                     </button>
                     <button
                       onClick={() => setMode('listing')}
-                      className="flex items-center justify-center gap-2 px-7 py-4 bg-white hover:bg-[#FAF9F5] text-[#5A5A40] border-2 border-[#5A5A40]/20 text-xs font-extrabold uppercase tracking-widest rounded-xl transition-all cursor-pointer"
+                      className="flex items-center justify-center gap-2 px-8 py-4 bg-white hover:bg-[#FAF9F5] text-[#5A5A40] border-2 border-[#5A5A40] text-xs font-extrabold uppercase tracking-widest rounded-xl transition-all cursor-pointer font-bold"
                     >
                       <ShoppingBag size={16} />
-                      <span>Explore Platform</span>
+                      <span>See Demo</span>
                     </button>
                     <button
                       onClick={() => setMode('chat')}
@@ -1847,7 +1847,36 @@ export default function App() {
                 </div>
               </div>
 
-              {/* 7. MARKETPLACE COVERAGE */}
+              {/* 7. QUICK START GUIDES */}
+              <div className="space-y-8">
+                <div className="text-center max-w-2xl mx-auto space-y-2">
+                  <span className="text-[10px] font-mono text-[#8E9299] uppercase tracking-widest font-extrabold">Popular Use Cases</span>
+                  <h2 className="font-serif text-3xl md:text-4xl text-[#5A5A40] font-bold">Three Ways to Get Started</h2>
+                  <p className="text-sm text-[#8E9299]">Choose your path and explore MerchantAI in minutes.</p>
+                </div>
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+                  <div onClick={() => { setMode('reply'); setTimeout(() => window.scrollTo({ top: 0, behavior: 'smooth' }), 100); }} className="bg-white rounded-3xl p-8 border border-[#5A5A40]/10 hover:border-[#5A5A40]/40 hover:shadow-lg transition-all cursor-pointer group">
+                    <div className="w-12 h-12 bg-[#5A5A40]/10 rounded-2xl flex items-center justify-center text-[#5A5A40] mb-6 group-hover:scale-110 transition-transform"><MessageSquare size={24} /></div>
+                    <h3 className="font-serif text-xl font-bold text-[#5A5A40] mb-3">Customer Support</h3>
+                    <p className="text-xs text-[#8E9299] leading-relaxed mb-4">Generate empathetic responses to disputes and returns instantly.</p>
+                    <span className="text-[10px] font-bold text-[#5A5A40] uppercase tracking-wider">Try Now →</span>
+                  </div>
+                  <div onClick={() => { setMode('listing'); setTimeout(() => window.scrollTo({ top: 0, behavior: 'smooth' }), 100); }} className="bg-white rounded-3xl p-8 border border-[#5A5A40]/10 hover:border-[#5A5A40]/40 hover:shadow-lg transition-all cursor-pointer group">
+                    <div className="w-12 h-12 bg-[#5A5A40]/10 rounded-2xl flex items-center justify-center text-[#5A5A40] mb-6 group-hover:scale-110 transition-transform"><ShoppingBag size={24} /></div>
+                    <h3 className="font-serif text-xl font-bold text-[#5A5A40] mb-3">SEO Listings</h3>
+                    <p className="text-xs text-[#8E9299] leading-relaxed mb-4">Create marketplace-optimized titles and bullets for Amazon, eBay.</p>
+                    <span className="text-[10px] font-bold text-[#5A5A40] uppercase tracking-wider">Create Listing →</span>
+                  </div>
+                  <div onClick={() => { setMode('chat'); setTimeout(() => window.scrollTo({ top: 0, behavior: 'smooth' }), 100); }} className="bg-white rounded-3xl p-8 border border-[#5A5A40]/10 hover:border-[#5A5A40]/40 hover:shadow-lg transition-all cursor-pointer group">
+                    <div className="w-12 h-12 bg-[#5A5A40]/10 rounded-2xl flex items-center justify-center text-[#5A5A40] mb-6 group-hover:scale-110 transition-transform"><Bot size={24} /></div>
+                    <h3 className="font-serif text-xl font-bold text-[#5A5A40] mb-3\">AI Advisor</h3>
+                    <p className="text-xs text-[#8E9299] leading-relaxed mb-4">Ask questions about merchant strategies and marketplace tactics.</p>
+                    <span className="text-[10px] font-bold text-[#5A5A40] uppercase tracking-wider">Chat Now →</span>
+                  </div>
+                </div>
+              </div>
+
+              {/* 8. MARKETPLACE COVERAGE */}
               <div className="space-y-8">
                 <div className="text-center max-w-2xl mx-auto space-y-2">
                   <span className="text-[10px] font-mono text-[#8E9299] uppercase tracking-widest font-extrabold">Built-In Algorithm Memory</span>
